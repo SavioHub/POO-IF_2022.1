@@ -1,8 +1,0 @@
-package questao2;
-
-public class Borracha {
-
-	public void apagar() {
-		System.out.println("Texto escrito apagado");
-	}
-}
