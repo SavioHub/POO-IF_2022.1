@@ -1,0 +1,15 @@
+package questao2;
+
+public class MaterialTeste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Papel p = new Papel();
+		Lapis l = new Lapis();
+		
+		p.apagar();
+		l.escreverTexto(p);
+	}
+
+}

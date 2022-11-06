@@ -1,0 +1,20 @@
+package questao2;
+
+public class MaterialTeste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Papel papel = new Papel();
+		Lapis lapis = new Lapis();
+		Borracha borra = new Borracha();
+				
+		
+		lapis.escreverTexto(papel);
+		papel.mostrarTexto();
+		borra.apagar(papel);
+		papel.mostrarTexto();
+		
+	}
+
+}

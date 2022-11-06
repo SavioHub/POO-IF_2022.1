@@ -1,0 +1,34 @@
+package questao2;
+
+public class MaterialTeste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Papel papel = new Papel();
+		Lapis lapis = new Lapis();
+		Borracha borra = new Borracha();
+				
+		System.out.println("Informações do papel\n");
+		System.out.println(papel.getQtd());
+		System.out.println(papel.getCor());
+		System.out.println(papel.getPreco()+"\n");
+		System.out.println("Informações do lapis\n");
+		System.out.println(lapis.getQtd());
+		System.out.println(lapis.getCor());
+		System.out.println(lapis.getPreco()+"\\n");
+		System.out.println("Informações da borracha\n");
+		System.out.println(borra.getQtd());
+		System.out.println(borra.getCor());
+		System.out.println(borra.getPreco());
+		
+		
+		
+		lapis.escreverTexto(papel);
+		papel.mostrarTexto();
+		borra.apagar(papel);
+		papel.mostrarTexto();
+		
+	}
+
+}

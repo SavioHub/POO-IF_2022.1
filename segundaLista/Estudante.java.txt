@@ -1,0 +1,43 @@
+package estudante.br;
+
+public class Estudante {
+	 public String nome;
+	 public double nota[] = new double[3];
+	 private double media=0;
+	 public String situacao;
+	 
+	 public Estudante() {
+		 this.nota[0] =0;
+		 this.nota[1] = 0;
+		 this.nota[2] = 0;
+	 }
+	 
+		//nome
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNome() {
+		return this.nome;
+	}
+		
+	public void CalcularMedia(double n1, double n2, double n3) {
+		double soma=0;
+		for (int i = 0; i < nota.length; i++) {
+			soma += nota[i];
+		}
+			media = (soma / nota.length);
+			Situacao();
+		}
+	
+	public void Situacao() {
+		if (media >= 7) {
+			this.situacao = "aprovado";
+		} else if (media < 7) {
+			this.situacao = "Final";
+		} else {
+			this.situacao = "reprovado";
+		}
+	}
+
+	
+}

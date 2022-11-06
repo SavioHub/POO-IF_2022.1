@@ -1,0 +1,13 @@
+package questao6;
+
+public class TesteFuncionario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Funcionario func = new Funcionario();
+		
+		func.informarSalario();
+		func.senioridade();
+	}
+
+}

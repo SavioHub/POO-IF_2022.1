@@ -1,0 +1,12 @@
+package questao2;
+import java.util.Scanner;
+
+public class Lapis extends MaterialEscolar {
+	Scanner scan = new Scanner(System.in);
+	String ler;
+	
+	public void escreverTexto() {
+		System.out.println("Digite um texto:");
+		ler = scan.nextLine();
+	}
+}

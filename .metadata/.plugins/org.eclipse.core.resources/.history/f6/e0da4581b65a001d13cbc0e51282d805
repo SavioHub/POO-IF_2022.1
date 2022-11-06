@@ -1,0 +1,25 @@
+package questao2;
+import java.util.Scanner;
+
+public class Lapis extends MaterialEscolar {
+	Scanner scan = new Scanner(System.in);
+	private String texto;
+	public Lapis() {
+		setQtd(1);
+		setCor("azul");
+		setPreco(2.00);
+		setAltura(8.0f);
+		setLargura(0.3f);
+	}
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+	
+	public void escreverTexto(String texto) {
+		texto = scan.nextLine();
+	}
+}

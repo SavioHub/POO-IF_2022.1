@@ -1,0 +1,12 @@
+package questao6;
+
+public class Venda {
+	private Funcionario func;
+	private Cliente cli;
+	private Produto pro;
+	
+	public void venderProduto() {
+		System.out.println("Vender produto disponivel:"+pro.getNome());
+		
+	}
+}

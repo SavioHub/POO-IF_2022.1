@@ -1,0 +1,87 @@
+package questao5;
+
+import java.util.Scanner;
+
+public class ContaPoupanca {
+	public class ContaPoupanca {
+		private Scanner scan = new Scanner(System.in);
+		private double saldo;
+	    private int agencia;
+	    private ContaCorrente destino;
+	    
+	    public ContaCorrente getDestino() {
+			return destino;
+		}
+
+		public void setDestino(ContaCorrente destino) {
+			this.destino = destino;
+		}
+
+		private int conta;
+
+	    public ContaPoupanca() {    
+	        this.agencia = 00000;
+	        this.conta=0000;
+	    }
+	    
+	    public int getAgencia() {
+			return this.agencia;
+		}
+	    public void setSaldo(int saldo) {
+	    	this.saldo = saldo;
+	    }
+
+		public double getSaldo() {
+	    	return this.saldo;
+	    }
+	    
+	    public int getConta() {
+	    	return this.conta;
+	    }
+
+	    public void informarConta() {
+	    	System.out.println("Disgite o numero da conta:");
+	    	this.conta = scan.nextInt();     	
+	    }
+	    
+	    public void informarAgencia() {
+	    	System.out.println("Disgite o numero da agencia:");
+	    	this.agencia = scan.nextInt();
+	    	
+	    }
+	    
+	    public void depositar(double valorDeposito) {
+	    	double depositar;
+	        this.saldo += valorDeposito;
+	        depositar = valorDeposito;
+	        System.out.println("Valor depositado:"+depositar);
+	    }
+
+	    public void sacar(double valorSaque) {
+	    	double saque;
+	        if (this.saldo >= valorSaque) {
+	            this.saldo -= valorSaque;
+	            saque = valorSaque;
+	            System.out.println("Valor de saque:"+saque);
+	        } else {
+	            System.out.println("Não há saldo para sacar!");
+	        }
+	    }
+
+	    public double valorSaldo() {
+	    	System.out.println("Valor de saldo atual:"+this.saldo);
+	    	return this.saldo;
+	    }
+	}
+}
+	    
+//	    public void transferir(double valorTransferencia, ContaCorrente destino) {
+//	        if (this.saldo >= valorTransferencia) {
+//	            this.saldo -= valorTransferencia;
+	//  
+//	            destino.setSaldo(valorTransferencia);
+//	            
+//	        }else {
+//	        	System.out.println("Não há salado para transferencia!");
+//	        }
+//	    }

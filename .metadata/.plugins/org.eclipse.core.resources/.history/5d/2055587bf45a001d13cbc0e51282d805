@@ -1,0 +1,45 @@
+package questao5;
+
+import java.util.Scanner;
+
+
+public class Conta {
+	Scanner scan = new Scanner (System.in);
+	private String numConta;
+	private String nome;
+	private float saldo;
+	
+	
+	public Conta() {
+//		super();
+		setNome("Sávio Santos da Silva");
+		setNumConta("00001");
+		setSaldo(0);
+	}
+
+	public String getNumConta() {
+		return numConta;
+	}
+
+	public void setNumConta(String numConta) {
+		this.numConta = numConta;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public float getSaldo() {
+		return this.saldo;
+	}
+
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+	
+	
+}

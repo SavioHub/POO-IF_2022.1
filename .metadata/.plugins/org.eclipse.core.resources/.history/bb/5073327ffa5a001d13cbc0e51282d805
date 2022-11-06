@@ -1,0 +1,19 @@
+package questao5;
+
+public class TesteConta {
+
+	public static void main(String[] args) {
+		ContaCorrente cc = new ContaCorrente();
+		ContaPoupanca cp = new ContaPoupanca();
+		
+//		cc.valorSaldo();
+//		cc.menu();
+		
+//		cp.menu();
+		cc.depositar(20);
+//		cc.valorSaldo();
+//		cc.depositar(100);
+//		cc.valorSaldo();
+	}
+
+}

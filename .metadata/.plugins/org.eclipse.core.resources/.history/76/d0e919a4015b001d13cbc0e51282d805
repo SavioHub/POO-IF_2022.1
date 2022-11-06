@@ -1,0 +1,68 @@
+package questao6;
+
+import java.util.Scanner;
+
+public class Funcionario extends Pessoa{
+	Scanner scan = new Scanner(System.in);
+	private String setor;
+	private double salario, salarioMinimo;
+	
+	public Funcionario() {
+		setNome("Sávio Santos");
+		setCpf("093.385.075-22");
+		setIdade(20);
+		setSetor("Estudante");
+	}
+
+ 
+	public double getSalarioMinimo() {
+		return salarioMinimo;
+	}
+	public void setSalarioMinimo(double salarioMinimo) {
+		this.salarioMinimo = salarioMinimo;
+	}
+	public String getSetor() {
+		return this.setor;
+	}
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
+
+	public double getSalario() {
+		return this.salario;
+	}
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+	
+	
+	public void informarSalario() {
+		System.out.println("Informe seu salário:");
+		this.salario = scan.nextDouble();
+	}
+
+	
+	public void senioridade() {
+		
+		if(getSalario() <=2000) {
+			setSalarioMinimo(1212);
+			System.out.println("Você é um dev junior!");
+			System.out.println("Seu salário é de no máximo "+getSalarioMinimo());
+			
+		}else if(getSalario() > 2000 && getSalario() <= 3000) {
+			setSalarioMinimo(2000);
+			System.out.println("Você é um dev Pleno!");
+			System.out.println("Seu salário é de no minimo "+getSalarioMinimo());
+		
+		}else if(getSalario() > 3000) {
+			setSalarioMinimo(3000);
+			System.out.println("Você é um dev Senior!");
+			System.out.println("Seu salário é de no minimo "+getSalarioMinimo());
+		}else {
+			System.out.println("Algo de errado, tente novamente");
+			informarSalario();
+			senioridade();
+			return;
+		}
+	}
+}

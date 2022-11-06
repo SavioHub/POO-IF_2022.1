@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Funcionario {
+	Scanner scan = new Scanner(System.in);
+	
+	private String nome, setor, cpf;
+	private int idade;
+	private double salarioMinimo;
+
+	public Funcionario() {
+		this.nome ="qualquer nome";
+		this.salarioMinimo = 0;
+		this.setor = "desenvolvedor por exemplo";
+		this.cpf = "093.385.088-45";
+		this.idade = 0;
+	}
+	//nome
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public void valorSalarial(String senioridadeDev) {
+		
+		if(senioridadeDev == "Junior") {
+			this.salarioMinimo = 2000.00;
+			System.out.println("Você é um dev junior!");
+			System.out.println("Seu sário é de no minimo "+this.salarioMinimo);
+			
+		}else if(senioridadeDev == "Pleno") {
+			this.salarioMinimo = 3000.00;
+			System.out.println("Você é um dev Pleno!");
+			System.out.println("Seu sário é de no  minimo "+this.salarioMinimo);
+		
+		}else if(senioridadeDev == "Senior") {
+			this.salarioMinimo = 4500.00;
+			System.out.println("Você é um dev Senior!");
+			System.out.println("Seu sário é de no minimo "+this.salarioMinimo);
+		}else {
+			System.out.println("Algo de errado, tente novamente");
+		}
+	}
+}
+

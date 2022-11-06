@@ -1,0 +1,18 @@
+
+public class FuncionarioTeste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Funcionario func1 = new Funcionario();
+		Funcionario func2 = new Funcionario();
+		
+		func1.setNome("Sávio Santos");
+		System.out.println(func1.getNome());
+		func1.valorSalarial("Junior");
+		
+		func2.setNome("Woquinton Fernandes");
+		System.out.println(func2.getNome());
+		func2.valorSalarial("Senior");
+	}
+
+}

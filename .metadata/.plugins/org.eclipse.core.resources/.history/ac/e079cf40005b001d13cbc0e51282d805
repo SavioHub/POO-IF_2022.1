@@ -1,0 +1,42 @@
+package questao1;	
+
+public class Cliente extends Pessoa {
+
+
+	
+	public Cliente() {
+		this.nomeCliente = "Sávio Santos";
+		this.cpf = "0087865965";
+		this.idade = 20;
+		
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+	public String getNomeCliente() {
+		return this.nomeCliente;
+	}
+	
+	public String imprimirCliente() {
+		return "Nome:" + nomeCliente + "\nIdade:" + idade + "\n CPF:"+cpf;
+	}
+
+				
+}

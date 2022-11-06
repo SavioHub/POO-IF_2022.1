@@ -1,0 +1,13 @@
+package estudante.br;
+
+public class EstudanteTeste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Estudante aluno1 = new Estudante();
+		
+		aluno1.setNome("Sávio");
+		aluno1.CalcularMedia();
+	}
+
+}

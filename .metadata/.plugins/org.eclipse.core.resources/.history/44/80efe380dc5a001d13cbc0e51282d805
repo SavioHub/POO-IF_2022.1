@@ -1,0 +1,2 @@
+Eu fiz uma classe chamada de MaterialEscolar, e definir as classes Borracha, Lapis e Papel como sub classes
+depois modelei a classe Lapis como a classe principal usando a associação de agregação
