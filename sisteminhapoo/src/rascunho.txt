@@ -1,0 +1,176 @@
+	// System.out.println("Informe o nome do cliente para cadastro:");
+		// setNome(scan.nextLine());
+		// System.out.println("Informe o CPF do cliente para cadastro:");
+		// setCpf(scan.nextLine());
+        // System.out.println("Informe o Endereço do cliente para cadastro (CIDADE):");
+		// setEndereco(scan.nextLine());
+		// System.out.println("Digite o ID:");
+		// setIdCliente(scan.nextInt());
+		
+		// Cliente cliente = new Cliente(getIdCliente(), getNome(), getIdade(), getCpf(), getEndereco());
+		// lista.add(cliente);
+
+    // ArrayList<Vendedor>lista = new ArrayList<Vendedor>();
+
+    for (Vendedor vendedor : lista) {
+    if (getNome() == null) {
+        System.out.println("Vazio!");
+    } else {
+        System.out.println(vendedor);
+    }
+}
+
+
+			while (true) {
+
+				if (opcaoMenu == 1) {
+					// mostrarProdutos();
+				} else if (opcaoMenu == 2) {
+					cliente.mostrarCliente();
+				} else if (opcaoMenu == 3) {
+					vendedor.mostrarVendedor();
+				}else if (opcaoMenu == 4) {
+					cliente.cadastrarCliente();
+				}  else if (opcaoMenu == 5) {
+					vendedor.cadastrarVendedor();
+				} else if (opcaoMenu == 6) {
+					// dinheiroCaixa
+				}
+				else if (opcaoMenu == 7) {
+					// venderProduto();
+				} else if (opcaoMenu == 8) {
+					// novoProduto();
+				} else if (opcaoMenu == 9) {
+					// limparTela();
+				} else if (opcaoMenu == 10) {
+					System.out.println("- - - - - - Desconectado! COM SUCESSO - - - - - ");
+					break;
+				}
+			}
+
+
+            		// System.out.println("Add quantos Vendedores?");
+		// int qtd = scan.nextInt();
+		for (int i = 0; i < vendedor.length; i++) {
+			vendedor[i] = new Vendedor(getIdVendedor(), getNome(), getIdade(), getCpf(), getEndereco());
+			System.out.println("Informe o nome do Vendedor para cadastro:");
+			vendedor[i].setNome(scan.nextLine());
+			// vendedor[i].setNome(scan.nextLine());
+			System.out.println("Informe o CPF do Vendedor para cadastro:");
+			vendedor[i].setCpf(scan.nextLine());
+			System.out.println("Informe o Endereço do Vendedor para cadastro (CIDADE):");
+			vendedor[i].setEndereco(scan.nextLine());
+			System.out.println("Digite a idade:");
+			vendedor[i].setIdade(scan.nextInt());
+			System.out.println("Digite o ID:");
+			vendedor[i].setIdVendedor(scan.nextInt());
+			
+
+
+            		// System.out.println("Add quantos Vendedores?");
+		// int qtd = scan.nextInt();
+		// for (int i = 0; i < vendedor.length; i++) {
+		// 	vendedor[i] = new Vendedor(getIdVendedor(), getNome(), getIdade(), getCpf(), getEndereco());
+		// 	System.out.println("Informe o nome do Vendedor para cadastro:");
+		// 	vendedor[i].setNome(scan.nextLine());
+		// 	// vendedor[i].setNome(scan.nextLine());
+		// 	System.out.println("Informe o CPF do Vendedor para cadastro:");
+		// 	vendedor[i].setCpf(scan.nextLine());
+		// 	System.out.println("Informe o Endereço do Vendedor para cadastro (CIDADE):");
+		// 	vendedor[i].setEndereco(scan.nextLine());
+		// 	System.out.println("Digite a idade:");
+		// 	vendedor[i].setIdade(scan.nextInt());
+		// 	System.out.println("Digite o ID:");
+		// 	vendedor[i].setIdVendedor(scan.nextInt());
+			
+			// if (i >0) {
+			// 	System.out.println("Vendedor cadastrado com sucesso!");
+			// }
+
+
+            		System.out.println("Pressione 0 para voltar ao menu do programa ou 1 para cadastrar mais clientes");
+		System.out.println("Escolha:");
+		int op = scan.nextInt();
+		if (op == 0) {
+			LoginTeste.menu();
+		}
+
+		while (op == 1) {
+			cadastrarVendedor();
+
+			System.out.println("Pressione 0 para voltar ao menu do programa ou 1 para cadastrar mais clientes");
+			System.out.println("Escolha:");
+			op = scan.nextInt();
+			if (op == 0) {
+				LoginTeste.menu();
+			}
+			while (op != 0 && op != 1) {
+				System.out.println("Erro, tente novamente!\n");
+				System.out.println("Pressione 1 para cadastrar mais clientes ou qualquer numero para abrir Menu");
+				System.out.println("Escolha:");
+				op = scan.nextInt();
+
+			}
+		}
+
+
+
+classe venda
+public class ItemVenda {
+    private int quantidade;
+    private Produto produto;
+    private double percentualDesconto;
+
+    public ItemVenda(int quantidade, Produto produto, double percentualDesconto) {
+        setProduto(produto);
+        setQuantidade(quantidade);
+        setPercentualDesconto(percentualDesconto);
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+
+    public double getPercentualDesconto() {
+        return this.percentualDesconto;
+    }
+
+    public void setPercentualDesconto(double percentualDesconto) {
+        this.percentualDesconto = percentualDesconto;
+    }
+
+
+    //add
+    public double calcularValorTotalItem(){
+        return getQuantidade() * produto.getPreco();
+    }
+
+    public double calcularValorTotalItemSemDesconto() {
+        return getQuantidade() * produto.getPreco();
+      }
+
+    public double calcularDescontoItem() {
+        double totalItem = calcularValorTotalItemSemDesconto();
+        double desconto = totalItem * getPercentualDesconto() / 100;
+        return desconto;
+    }
+}
+
+
+controlador:
+			Vendedor vendedor = new Vendedor(id,nome,idade,cpf,end);
+			vendedores[qtdVendedor]=vendedor;
+			qtdVendedor++;
