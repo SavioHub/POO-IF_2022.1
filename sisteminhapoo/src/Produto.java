@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Produto {
@@ -7,7 +8,9 @@ public class Produto {
     private int qtdProdutos=0;
     private double preco;
 
-    Produto prod[] = new Produto[100];
+    // ArrayList<Produto>listaProduto = new ArrayList<Produto>();
+
+
     public Produto(){
 
     }
@@ -30,8 +33,8 @@ public class Produto {
         return this.nomeProduto;
     }
 
-    public void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
+    public void setNomeProduto(String nome) {
+        this.nomeProduto= nome;
     }
 
     public int getQtdProdutos() {
@@ -39,15 +42,15 @@ public class Produto {
     }
 
     public void setQtdProdutos(int estoque) {
-        this.qtdProdutos = estoque;
+        this.qtdProdutos=estoque;
     }
 
     public double getPreco() {
         return this.preco;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setPreco(double preco1) {
+        this.preco=preco1;
     }
 
     public void entradaEstoque(int quantidade) {
@@ -58,72 +61,85 @@ public class Produto {
         qtdProdutos -= quantidade;
     }
 
-    public void novoProduto() {
+    public void novoProduto(ArrayList<Produto>prod) {
         int op;
-		System.out.println("-------------Adicionar novo produto-----------\n");
-		System.out.println("ID do produto:");
-		int idProdutos = scan.nextInt();
-		System.out.println("Nome do produto:");
-		String nome = scan.nextLine();
-        nome = scan.nextLine();
-		System.out.println("Preço do produto:");
-		double precoProdutos = scan.nextDouble();
-		System.out.println("Quantidade de produto:");
-		int qtd = scan.nextInt();
-        Produto prod1 = new Produto(idProdutos, nome, qtd, precoProdutos);
-        prod[qtdProdutos]=prod1;
-        qtdProdutos++;
+        
+        Produto prod1 = new Produto();
+        
+        char controle = 's';
+		do {
+            System.out.println("-------------Adicionar novo produto-----------\n");
+            System.out.println("ID do produto:");
+            int idProdutos = scan.nextInt();
+            System.out.println("Nome do produto:");
+            String nome = scan.nextLine();
+            nome = scan.nextLine();
+            System.out.println("Preço do produto:");
+            double precoProdutos = scan.nextDouble();
+            System.out.println("Quantidade de produto:");
+            int qtd = scan.nextInt();
+            
+            prod1 = new Produto(idProdutos, nome, qtd, precoProdutos);
+			prod.add(prod1);
 
-		System.out.println("Pressione 0 para voltar ao menu do programa ou 1 para cadastrar mais produtos");
-		System.out.println("Escolha:");
-		op = scan.nextInt();
-		if (op == 0) {
-			LoginTeste.menu();
-		}
-		while (op == 1) {
-			novoProduto();
-			System.out.println("Pressione 1 para abrir Menu");
-			System.out.println("Escolha:");
-			op = scan.nextInt();
-			if (op == 0) {
-				LoginTeste.menu();
-			}
-			while (op != 0 && op != 1) {
-				System.out.println("Opção inválida!, tente novamente\n");
-				System.out.println("Pressione 1 para abrir Menu");
-				System.out.println("Escolha:");
-				op = scan.nextInt();
-				if (op == 0) {
-					LoginTeste.menu();
-				}
-			}
-		}
+			System.out.println("Deseja add mais vendedores?");
+			controle = scan.next().charAt(0);
+			
+		} while (controle == 's' || controle =='S');
+
+		// System.out.println("Pressione 0 para voltar ao menu do programa ou 1 para cadastrar mais produtos");
+		// System.out.println("Escolha:");
+		// op = scan.nextInt();
+		// if (op == 0) {
+		// 	LoginTeste.menu();
+		// }
+		// while (op == 1) {
+		// 	novoProduto(prod);
+		// 	System.out.println("Pressione 1 para abrir Menu");
+		// 	System.out.println("Escolha:");
+		// 	op = scan.nextInt();
+		// 	if (op == 0) {
+		// 		LoginTeste.menu();
+		// 	}
+		// 	while (op != 0 && op != 1) {
+		// 		System.out.println("Opção inválida!, tente novamente\n");
+		// 		System.out.println("Pressione 1 para abrir Menu");
+		// 		System.out.println("Escolha:");
+		// 		op = scan.nextInt();
+		// 		if (op == 0) {
+		// 			LoginTeste.menu();
+		// 		}
+		// 	}
+		// }
 
 	}
 
-    public void mostrarProdutos() {
+    public void mostrarProdutos(ArrayList<Produto>prod) {
 
 		System.out.println("\n--------------PRODUTOS-------------");
         if (getNomeProduto()!="") {
-            for(Produto produto : prod){
-                System.out.println("ID - "+produto.getIdProduto()+"Nome - "+produto.getNomeProduto());
+        
+            for(int i = 0; i < prod.size(); i++)
+            {
+                System.out.println("ID - " + prod.get(i).getIdProduto()+"Nome - "+prod.get(i).nomeProduto+"Qtd - "+prod.get(i).getQtdProdutos()+"Preço - "+prod.get(i).getPreco());
             }
+
         }else{
             System.out.println("Vazio!");
         }
 
-		System.out.println("Pressione 1 para abrir Menu");
-		System.out.println("Escolha:");
-		int op = scan.nextInt();
-		if (op == 1) {
-			LoginTeste.menu();
-		}
-		while (op != 1) {
-			System.out.println("Opção inválida!, tente novamente\n");
-			System.out.println("Pressione 1 para abrir Menu");
-			System.out.println("Escolha:");
-			op = scan.nextInt();
-		}
+		// System.out.println("Pressione 1 para abrir Menu");
+		// System.out.println("Escolha:");
+		// int op = scan.nextInt();
+		// if (op == 1) {
+			
+		// }
+		// while (op != 1) {
+		// 	System.out.println("Opção inválida!, tente novamente\n");
+		// 	System.out.println("Pressione 1 para abrir Menu");
+		// 	System.out.println("Escolha:");
+		// 	op = scan.nextInt();
+		// }
 
 	}
 

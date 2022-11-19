@@ -1,41 +1,46 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class LoginTeste {
     public static void main(String[] args) {
+		// ArrayList<Vendedor>vendedor1 = new ArrayList<>();
+		ArrayList<Produto>prod = new ArrayList<>();
+		ArrayList<Vendedor>listaVendedor = new ArrayList<>();
+		ArrayList<Cliente>listaCliente = new ArrayList<>();
 
-        // Produto prod = new Produto(0, "", 3, 0);
-        Cliente cliente = new Cliente(0, null, 0, null, null);
         // Cliente cliente = new Cliente(5, "sávio", 20, "093.385.075-22", "guanambi");
-        Vendedor vendedor = new Vendedor(3, null, 0, null, null);
+        // Vendedor vendedor = new Vendedor(3, null, 0, null, null);
         // Vendedor vendedor = new Vendedor(3, "Woquiton", 44, "222.222-22", "vitoria da conquista");
 		
-		Produto prod = new Produto();
+		Produto produto = new Produto();
+		Vendedor vendedor = new Vendedor(0,null, 0, null, null);
+        Cliente cliente = new Cliente(0, null, 0, null, null);
+		Venda vende = new Venda();
 
-
-	    int opcaoMenu;
+	    // int opcaoMenu;
 	    boolean logado = logar();
 
         if (logado) {
-			opcaoMenu = menu();
-
+			
 			while (true) {
+				int opcaoMenu = menu();
 
 				if (opcaoMenu == 1) {
-					prod.mostrarProdutos();
+					produto.mostrarProdutos(prod);
 				} else if (opcaoMenu == 2) {
-					cliente.mostrarCliente();
+					cliente.mostrarCliente(listaCliente);
 				} else if (opcaoMenu == 3) {
-					vendedor.mostrarVendedor();
+					vendedor.mostrarVendedor(listaVendedor);
 				}else if (opcaoMenu == 4) {
-					cliente.cadastrarCliente();
+					cliente.cadastrarCliente(listaCliente);
 				}  else if (opcaoMenu == 5) {
-					vendedor.cadastrarVendedor();
+					vendedor.cadastrarVendedor(listaVendedor);
 				} else if (opcaoMenu == 6) {
 					// dinheiroCaixa
 				}
 				else if (opcaoMenu == 7) {
-					// venderProduto();
+					vende.venderProduto(prod, listaCliente, listaVendedor);
 				} else if (opcaoMenu == 8) {
-					prod.novoProduto();
+					produto.novoProduto(prod);
 				} else if (opcaoMenu == 9) {
 					// limparTela();
 				} else if (opcaoMenu == 10) {
