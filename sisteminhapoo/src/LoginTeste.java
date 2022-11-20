@@ -2,14 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class LoginTeste {
     public static void main(String[] args) {
-		// ArrayList<Vendedor>vendedor1 = new ArrayList<>();
 		ArrayList<Produto>prod = new ArrayList<>();
 		ArrayList<Vendedor>listaVendedor = new ArrayList<>();
 		ArrayList<Cliente>listaCliente = new ArrayList<>();
-
-        // Cliente cliente = new Cliente(5, "sávio", 20, "093.385.075-22", "guanambi");
-        // Vendedor vendedor = new Vendedor(3, null, 0, null, null);
-        // Vendedor vendedor = new Vendedor(3, "Woquiton", 44, "222.222-22", "vitoria da conquista");
 		
 		Produto produto = new Produto();
 		Vendedor vendedor = new Vendedor(0,null, 0, null, null);
@@ -42,7 +37,7 @@ public class LoginTeste {
 				} else if (opcaoMenu == 8) {
 					produto.novoProduto(prod);
 				} else if (opcaoMenu == 9) {
-					// limparTela();
+					limparTela();
 				} else if (opcaoMenu == 10) {
 					System.out.println("- - - - - - Desconectado! COM SUCESSO - - - - - ");
 					break;
@@ -93,5 +88,9 @@ public class LoginTeste {
 		System.out.println("Escolha:");
 		int opcaoMenu = scan.nextInt();
 		return opcaoMenu;
+	}
+	
+	public static void limparTela(){
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 }

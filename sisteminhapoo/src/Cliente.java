@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Cliente extends Pessoa {
 	private int idCliente;
-	public int qtdClientes = 10;
 
 	public Cliente(int idCliente, String nome, int idade, String cpf, String endereco) {
 		super(nome, idade, cpf, endereco);
@@ -18,7 +17,6 @@ public class Cliente extends Pessoa {
 	}
 
 	public void cadastrarCliente(ArrayList<Cliente> cliente) {
-		// Cliente cli = new Cliente(getIdCliente(), getNome(),getIdade(), getCpf(), getEndereco());
 
 		char controle = 's';
 		do {
@@ -38,7 +36,7 @@ public class Cliente extends Pessoa {
 			Cliente cli = new Cliente(id, nome, idade, cpf, end);
 			cliente.add(cli);
 
-			System.out.println("Deseja add mais vendedores?");
+			System.out.println("Deseja add mais clientes?");
 			controle = scan.next().charAt(0);
 
 		} while (controle == 's' || controle == 'S');
@@ -47,58 +45,28 @@ public class Cliente extends Pessoa {
 			System.out.println("Cliente cadastrado com sucesso!");
 		}
 
-		// System.out.println("Pressione 0 para voltar ao menu do programa ou 1 para
-		// cadastrar mais clientes");
-		// System.out.println("Escolha:");
-		// int op = scan.nextInt();
-		// if (op == 0) {
-		// LoginTeste.menu();
-		// } else {
-		// while (op == 1) {
-		// cadastrarCliente(cliente);
-
-		// System.out.println("Pressione 0 para voltar ao menu do programa ou 1 para
-		// cadastrar mais clientes");
-		// System.out.println("Escolha:");
-		// op = scan.nextInt();
-		// if (op == 0) {
-		// LoginTeste.menu();
-		// }
-		// while (op != 0 && op != 1) {
-		// System.out.println("Erro, tente novamente!\n");
-		// System.out.println("Pressione 1 para cadastrar mais clientes ou qualquer
-		// numero para abrir Menu");
-		// System.out.println("Escolha:");
-		// op = scan.nextInt();
-		// }
-		// }
-		// }
-
 	}
 
 	public void mostrarCliente(ArrayList<Cliente> cliente) {
 		System.out.println("\n--------------CLIENTES-------------");
 
-		if (getNome() == null || getNome() == "") {
-			System.out.println("Vazio!");
-		} else {
-			for (int i = 0; i < cliente.size(); i++) {
-				System.out.println("ID - " + cliente.get(i).getNome() + "Nome - " + cliente.get(i).getNome() + "CPF - "
-						+ cliente.get(i).getCpf() + "Endereço - " + cliente.get(i).getEndereco());
-			}
+		for (int i = 0; i < cliente.size(); i++) {
+			System.out
+					.println("ID - " + cliente.get(i).getIdCliente() + " Nome - " + cliente.get(i).getNome() + " CPF - "
+							+ cliente.get(i).getCpf() + " Endereço - " + cliente.get(i).getEndereco());
 		}
 
 		// System.out.println("Pressione 1 para abrir Menu");
 		// System.out.println("Escolha:");
 		// int op = scan.nextInt();
 		// if (op == 1) {
-		// LoginTeste.menu();
+		// 	LoginTeste.menu();
 		// }
 		// while (op != 1) {
-		// System.out.println("Opção inválida!, tente novamente\n");
-		// System.out.println("Pressione 1 para abrir Menu");
-		// System.out.println("Escolha:");
-		// op = scan.nextInt();
+		// 	System.out.println("Opção inválida!, tente novamente\n");
+		// 	System.out.println("Pressione 1 para abrir Menu");
+		// 	System.out.println("Escolha:");
+		// 	op = scan.nextInt();
 		// }
 	}
 
