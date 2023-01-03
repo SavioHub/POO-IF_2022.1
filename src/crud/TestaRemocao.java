@@ -1,5 +1,6 @@
 package crud;
 
+import modelo.Cliente;
 import principal.ConnectionFactory;
 
 import java.sql.Connection;
@@ -8,17 +9,17 @@ import java.sql.SQLException;
 
 public class TestaRemocao {
     public static void main(String[] args) throws SQLException {
+        Cliente cliente = new Cliente("Sabrina",1);
+
         ConnectionFactory factory = new ConnectionFactory();
         Connection connection = factory.recuperaConexao();
 
+        PersistenciaProduto persistenciaProduto = new PersistenciaProduto(connection);
+        persistenciaProduto.remocaoCliente(cliente);
+        persistenciaProduto.listarCliente(cliente);
         //Statement stm = connection.createStatement();
         //stm.execute("DELETE from cliente WHERE id > 2");
 
-        PreparedStatement stm = connection.prepareStatement("DELETE from cliente WHERE id = ?");
-        stm.setInt(1, 9);
-        stm.execute();
 
-        Integer linhasModificadas = Math.toIntExact(stm.getLargeUpdateCount());
-        System.out.println("Quantidade de linhas modificadas: "+ linhasModificadas);
     }
 }
