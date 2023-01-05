@@ -23,11 +23,16 @@ public class ConnectionFactory {
 
         comboPooledDataSource.setMaxPoolSize(15);
     }
-    public Connection recuperaConexao() throws SQLException {
-        return this.dataSource.getConnection();
-        //faz com q o datasouce pega a conexão que está disponivel no pool de conexoẽs
-        //não precisa ir direto ao banco de dados, quando uma conexão estiver aberta e o usuario encerrar a tarefa
-        //e outro usuario abrir uma requisição, ele usara a conexão q estiver aberta do pool
-        // Reciclar um conjunto de conexões de tamanho fixo ou dinâmico
+    public Connection recuperaConexao() {
+        try {
+            return this.dataSource.getConnection();
+            //faz com q o datasouce pega a conexão que está disponivel no pool de conexoẽs
+            //não precisa ir direto ao banco de dados, quando uma conexão estiver aberta e o usuario encerrar a tarefa
+            //e outro usuario abrir uma requisição, ele usara a conexão q estiver aberta do pool
+            // Reciclar um conjunto de conexões de tamanho fixo ou dinâmico
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
     }
 }

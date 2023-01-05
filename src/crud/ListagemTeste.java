@@ -1,9 +1,11 @@
 package crud;
 
+import dao.ClienteDAO;
 import modelo.Cliente;
 import principal.ConnectionFactory;
 
 import java.sql.*;
+import java.util.List;
 
 public class ListagemTeste {
     public static void main(String[] args) throws SQLException {
@@ -12,11 +14,16 @@ public class ListagemTeste {
         //instanciação do objeto da classe CriaConexao
         ConnectionFactory connectionFactory = new ConnectionFactory();
         //instanciação da interface Connection recebendo o objeto criaConexao com seu metodo recuperarConexao
-        Connection connection = connectionFactory.recuperaConexao();
 
-        PersistenciaProduto persistenciaProduto = new PersistenciaProduto(connection);
-        persistenciaProduto.listarCliente(cliente);
+        try(Connection connection = connectionFactory.recuperaConexao()){
+            ClienteDAO produtoDAO = new ClienteDAO(connection);
+            List<Cliente> clienteList = produtoDAO.listar();
+            //clienteList.stream().forEach(lc -> System.out.println(lc));
+            //produtoDAO.listar(cliente);
 
-        connection.close();
+            for (Cliente lc: clienteList  ) {
+                System.out.println(lc);
+            }
+        };
     }
 }
